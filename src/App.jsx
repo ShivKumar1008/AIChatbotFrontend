@@ -12,7 +12,59 @@ import ThemeToggle from "./components/ThemeToggle"
 import AboutPage from "./components/AboutPage"
 import FeaturesPage from "./components/FeaturesPage"
 
+
 function App() {
+
+
+
+
+  
+  import { useEffect } from "react";
+
+function App() {
+  useEffect(() => {
+    window.botpress.on("webchat:ready", () => {
+      window.botpress.open();
+    });
+
+    window.botpress.init({
+      botId: "ebad00b4-959c-496c-8547-325627b1140c",
+      configuration: {
+        website: {},
+        email: {},
+        phone: {},
+        termsOfService: {},
+        privacyPolicy: {},
+        color: "#3B82F6",
+        variant: "solid",
+        themeMode: "light",
+        fontFamily: "inter",
+        radius: 1,
+      },
+      clientId: "56763766-b305-44e6-8ccc-e6154e19e2ef",
+      selector: "#webchat",
+    });
+  }, []);
+
+  return (
+    <div>
+      <h1>Welcome to My Chatbot!</h1>
+      <div id="webchat" style={{ width: "500px", height: "500px" }}></div>
+    </div>
+  );
+}
+
+export default App;  
+  
+  
+  
+
+
+
+  
+  
+  
+  
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isListening, setIsListening] = useState(false)
   const [showTemplateModal, setShowTemplateModal] = useState(false)
@@ -22,7 +74,7 @@ function App() {
   const [messages, setMessages] = useState([
     {
       id: "1",
-      content: "Hello! I'm your AI legal assistant. How can I help you today?",
+      content: "Hello! I'm your Legal AI assistant. How can I help you today?",
       role: "assistant",
       timestamp: new Date(),
     },
