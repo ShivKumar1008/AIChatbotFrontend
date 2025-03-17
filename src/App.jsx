@@ -1016,6 +1016,8 @@ console.log(error)
       {currentPage === "chat" && renderChatPage()}
       {currentPage === "about" && <AboutPage navigateTo={navigateTo} />}
       {currentPage === "features" && <FeaturesPage navigateTo={navigateTo} />}
+  {/* Botpress Chatbot */}
+    <div id="webchat" style={{ width: "500px", height: "500px" }}></div>
     </div>
   )
 }
